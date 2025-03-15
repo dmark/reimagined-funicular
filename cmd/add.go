@@ -44,7 +44,7 @@ func addRun(cmd *cobra.Command, args []string) {
 	}
 	for _, x := range args {
 		item := todo.Item{Text: x}
-		item.SetPriority(priority)
+		item.SetPriority(priority) // my priority values are not being saved. They are defaulting to zero.
 		items = append(items, item)
 	}
 	err = todo.SaveItems(datafile, items)
